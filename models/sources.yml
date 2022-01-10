@@ -1,0 +1,62 @@
+version: 2
+
+sources:
+  - name: snowflake_sample_data
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: TPCH_SF1
+    tables:
+      - name: customer
+        identifier: CUSTOMER
+        columns:
+          - name: C_CUSTKEY
+          - name: C_NAME
+
+  - name: subscription
+    database: SUBSCRIPTION
+    schema: RAW
+    tables:
+      - name: account
+        identifier: ACCOUNT
+        columns:
+            - name: ID
+            - name: NAME
+            - name: STATE
+            - name: CITY
+            - name: DELETED_AT
+            - name: _LOADED_AT
+
+      - name: order
+        identifier: ORDER
+        quoting:
+            identifier: true
+        columns:
+            - name: ID
+            - name: CUSTOMER
+            - name: EFFECTIVE_ON
+            - name: BOOKED_ON
+            - name: TYPE
+            - name: DELETED_AT
+            - name: _LOADED_AT
+
+      - name: order_product
+        identifier: ORDER_PRODUCT
+        columns:
+            - name: ID
+            - name: ORDER
+            - name: PRODUCT
+            - name: QUANTITY_CHANGE
+            - name: DELETED_AT
+            - name: _LOADED_AT
+
+      - name: product
+        identifier: PRODUCT
+        columns:
+            - name: ID
+            - name: NAME
+            - name: UNIT
+            - name: UNIT_RATE
+            - name: TYPE
+            - name: UNIT_TIMING
+            - name: STATUS
+            - name: DELETED_AT
+            - name: _LOADED_AT
