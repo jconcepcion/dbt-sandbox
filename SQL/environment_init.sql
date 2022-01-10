@@ -1,4 +1,5 @@
 -- Snowflake initialization
+----
 
 ------------
 -- PROD
